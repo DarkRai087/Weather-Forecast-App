@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #93c5fd;
+        }
+    </style>
+</head>
+<body class="bg-blue-50 dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto max-w-4xl p-6">
+        <div class="flex justify-end mb-4">
+            <button id="theme-toggle" class="p-3 rounded-full bg-blue-100 dark:bg-gray-800 transition-colors">
+                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path id="sun-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m3.343-5.657L5.93 5.93m11.314 0l1.414-1.414" />
+                    <path id="moon-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-6">
+            <div class="flex mb-4">
+                <input 
+                    type="text" 
+                    id="city-input" 
+                    placeholder="Enter city name" 
+                    class="flex-grow p-3 border border-blue-200 dark:border-gray-700 rounded-l-lg bg-blue-50 dark:bg-gray-900 text-gray-800 dark:text-white"
+                >
+                <button 
+                    id="search-btn" 
+                    class="px-4 py-3 bg-blue-500 dark:bg-blue-700 text-white rounded-r-lg hover:bg-blue-600 dark:hover:bg-blue-800 transition-colors"
+                >
+                    Search
+                </button>
+                <button 
+                    id="location-btn" 
+                    class="ml-2 px-4 py-3 bg-blue-400 dark:bg-gray-700 text-white rounded-lg hover:bg-blue-500 dark:hover:bg-gray-600 transition-colors"
+                >
+                  Your  Location
+                </button>
+            </div>
+
+            <div id="weather-container" class="text-center">
+                <!-- Weather data will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <div 
+            id="forecast-container" 
+            class="grid grid-cols-5 gap-4"
+        >
+            <!-- 5-day forecast will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="./src/app.js"></script>
+</body>
+</html>
